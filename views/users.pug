@@ -1,8 +1,9 @@
 extends layout
 
 block content
-	h1 User List
-	ul
-		each user in users
-			li
-				a(href=`mailto:${user.email}`)= user.username
+  h1 Users
+  a(href='/users/add') Add user
+  ul
+    each user in users
+     li
+      a(href=`mailto:${user.email}`)= user.username
