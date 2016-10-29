@@ -2,7 +2,12 @@ const config = {
   "db": {
     "host":"localhost",
     "port": 27017,
-    "name": "nodeapp"
+    "db_name": "nodeapp",
+    "users_collection": "users"
+    "cred": { // cred is optional
+      "username": "root",
+      "password": "password"
+    }
   }
 };
 
