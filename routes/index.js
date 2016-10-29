@@ -1,12 +1,7 @@
-const express = require('express');
-const router = express.Router();
+const router = require('express').Router();
+const IndexController = require('../controllers/index.js');
 
-router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Express' });
-});
-
-router.get('/helloworld', (req, res) => {
-  res.render('helloworld', { title: 'Hello, World!' });
-});
+router.get('/', (req, res) => { IndexController.index(res); });
+router.get('/helloworld', (req, res) => { IndexController.helloWorld(res); });
 
 module.exports = router;
