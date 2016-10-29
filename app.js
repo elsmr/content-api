@@ -1,11 +1,6 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const mongo = require('mongodb');
-const monk = require('monk');
-
-const config = require('./config');
-const db = monk(`${config.db.host}:${config.db.port}/${config.db.name}`);
 
 const app = express();
 
@@ -13,8 +8,11 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// setup body-parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// setup sass middleware
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),
@@ -22,12 +20,8 @@ app.use(require('node-sass-middleware')({
   outputStyle: 'compressed'
 }));
 
+// set static assets
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(function(req,res,next){
-  req.db = db;
-  next();
-});
 
 // routes
 const rootRoutes = require('./routes/index');
