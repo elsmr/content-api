@@ -31,7 +31,7 @@ const config = {
 
 module.exports = config;
 
-### MongoDB Authentication
+### MongoDB authentication
 ```javascript
 const config = {
   "db": {
