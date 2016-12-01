@@ -1,4 +1,4 @@
-const config = {
+module.exports = {
   "db": {
     "host":"localhost",
     "port": 27017,
@@ -9,6 +9,4 @@ const config = {
       "password": "password"
     }
   }
-};
-
-module.exports = config;
+}
