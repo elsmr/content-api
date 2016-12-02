@@ -1,21 +1,24 @@
 const MongoClient = require('mongodb').MongoClient
-const config = require('../config')
+const config = require('./config')
 
-const mongoDb = {}
-let connPromise
+let _db
 
 if ("cred" in config.db) {
   connPromise = MongoClient.connect(`mongodb://${config.db.cred.username}:${config.db.cred.password}@${config.db.host}:${config.db.port}/${config.db.db_name}`)
 } else {
-  connPromise = MongoClient.connect(`${config.db.host}:${config.db.port}/${config.db.db_name}`)
+  connPromise = MongoClient.connect(`mongodb://${config.db.host}:${config.db.port}/${config.db.db_name}`)
 }
 
 connPromise
   .then((db) => {
-    mongoDb = db
+    _db = db
   })
-  .err((err) => {
+  .catch((err) => {
     console.log(err)
   })
 
-module.exports = mongoDb
+module.exports = {
+  getDb: () => _db
+}
+
+
