@@ -1,15 +1,10 @@
 const router = require('express').Router()
 const mediaService = require('../services/mediaService')
+const handlePromise = require('../utils/promise')
 
 router.route('/')
   .get((res) => {
-    mediaService.getAll()
-      .then((data) => {
-        res.json(data)
-      })
-      .catch((err) => {
-        res.send(err)
-      })
+    handlePromise(mediaService.getAll())
   })
 
 module.exports = router

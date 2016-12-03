@@ -1,19 +1,7 @@
-const db = require('../database').getDb()
+const db = require('../database/database')
 
 module.exports = {
   getAll: () => {
-    return db.collection('media').findAll();
-  },
-
-  addImage(image) {
-
-  },
-
-  addVideo(video) {
-
-  },
-
-  addAudio(audio) {
-
+    return db.get().collection('media').find({});
   }
 }

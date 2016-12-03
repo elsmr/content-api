@@ -1,32 +1,32 @@
-const db = require('../database').getDb()
+const db = require('../database/database')
 
 module.exports = {
   getCollections: () => {
-    console.log(db)
-    return db.collection('collections').findAll();
+    return db.get().collection('collections').find({}).toArray()
   },
 
   addCollection: (body) => {
     // todo: validate body
-    db.createCollection(body.name)
-    return db.collection('collections').insertOne(body)
+    db.get().createCollection(body.name)
+    return db.get().collection('collections').insertOne(body)
   },
 
   updateCollection: (body) => {
     // todo: validate body
-    return db.collection('collections').updateOne({"_id": body._id}, body)
+    return db.get().collection('collections').updateOne({"_id": body._id}, body)
   },
 
   deleteCollection: (name) => {
-    db.dropCollection(name)
-    db.collection('collections').deleteOne({"name": name})
+    db.get().dropCollection(name)
+    db.get().collection('collections').deleteOne({"name": name})
   },
 
   getItems: (name) => {
-    return db.collection(name).findAll()
+    console.log(name)
+    return db.get().collection(name).find({}).toArray()
   },
 
   addItem: (name, body) => {
-    return db.collection(name).insertOne(body)
+    return db.get().collection(name).insertOne(body)
   }
 }

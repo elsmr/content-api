@@ -1,11 +1,11 @@
-const db = require('../database').getDb()
+const db = require('../database/database')
 
 module.exports = {
   updateItem: (name,id) => {
-    return db.collection(name).updateOne(id, body)
+    return db.get().collection(name).updateOne(id, body)
   },
 
   deleteItem: (name,id) => {
-    return db.collection(name).deleteOne(id);
+    return db.get().collection(name).deleteOne(id);
   }
 }

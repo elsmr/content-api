@@ -8,7 +8,7 @@ router.use('/:name/:id', collectionItemRouter)
 router.route('/')
   .get((req, res) => {
     let getColls = collectionService.getCollections()
-    handlePromise(findColls, res)
+    handlePromise(getColls, res)
   })
   .post((req, res) => {
     let addColl = collectionService.addCollection(req.body)
@@ -17,19 +17,19 @@ router.route('/')
 
 router.route('/:name')
   .get((req, res) => {
-    let getItems = collectionService.getItems(req.param.name)
+    let getItems = collectionService.getItems(req.params.name)
     handlePromise(getItems, res)
   })
   .post((req, res) => {
-    let addItem = collectionService.addItem(req.param.name,req.body)
+    let addItem = collectionService.addItem(req.params.name,req.body)
     handlePromise(addItem, res)
   })
   .put((req, res) => {
-    let updateColl = collectionService.updateCollection(req.param.name,req.body)
+    let updateColl = collectionService.updateCollection(req.params.name,req.body)
     handlePromise(updateColl, res)
   })
   .delete((req, res) => {
-    let deleteColl = collectionService.deleteCollection(req.param.name)
+    let deleteColl = collectionService.deleteCollection(req.params.name)
     handlePromise(deleteColl, res)
   })
 

@@ -1,5 +1,5 @@
-var router = require('express').Router({mergeParams: true});
-var handlePromise = require('../utils/promise')
+const router = require('express').Router({mergeParams: true});
+const handlePromise = require('../utils/promise')
 
 router.route('/')
   .get((req, res) => {
