@@ -1,32 +1,105 @@
 const db = require('../database/database')
+const error = require('../models/error')
 
 module.exports = {
   getCollections: () => {
-    return db.get().collection('collections').find({}).toArray()
+    return new Promise((resolve, reject) => {
+      db.get().collection('collections').find({}).toArray()
+        .then((docs) => {
+          resolve({data: docs})
+        })
+        .catch(() => {
+          reject(error())
+        })
+    })     
   },
 
   addCollection: (body) => {
     // todo: validate body
-    db.get().createCollection(body.name)
-    return db.get().collection('collections').insertOne(body)
+    delete body._id
+    return new Promise((resolve,reject) => {
+      db.get().createCollection(body.name)
+        .catch((err) => {
+          reject(err)
+        })
+      db.get().collection('collections').insertOne(body)
+        .then(() => {
+          resolve({data: body})
+        }).catch((err) => {
+          if(err.code === 11000) reject(error(`Collection named '${body.name}' already exists`, 409))
+          reject(error())
+        })
+    }) 
   },
 
-  updateCollection: (body) => {
+  updateCollection: (name, body) => {
     // todo: validate body
-    return db.get().collection('collections').updateOne({"_id": body._id}, body)
+    delete body._id
+    return new Promise((resolve,reject) => {
+      db.get().collection('collections').findOneAndUpdate({name: name}, body)
+        .then((docs) => {
+          if(!docs.value) {
+            reject(error(`No collection named '${name}'`, 404))
+          }
+          body._id = docs.value._id
+          resolve({data: {old: docs.value, new: body}})
+        })
+        .catch(() => {
+          reject(error())
+        })
+    })
   },
 
   deleteCollection: (name) => {
-    db.get().dropCollection(name)
-    db.get().collection('collections').deleteOne({"name": name})
+    return new Promise((resolve,reject) => {
+      db.get().collection('collections').findOneAndDelete({name: name})
+        .then((docs) => {
+          if(!docs.value) {
+            reject(error(`No collection named '${name}'`, 404))
+          }
+          db.get().dropCollection(name)
+            .then(() => {
+              resolve({data: docs.value})
+            }).catch(() => {
+              reject(error())
+            })
+        }).catch(() => {
+          reject(error())
+        })
+    })    
   },
 
   getItems: (name) => {
-    console.log(name)
-    return db.get().collection(name).find({}).toArray()
+    return new Promise((resolve, reject) => {
+      db.get().collection('collections').findOne({name: name})
+        .then((docs) => {
+          if(!docs) {
+            reject(error(`No collection named '${name}'`, 404))
+          }
+          db.get().collection(name).find({}).toArray()
+            .then((docs) => {
+              resolve({data: docs})
+            })
+            .catch(() => {
+              reject(error())
+            })
+        })
+        .catch(() => {
+          reject(error())
+        })
+    })    
   },
 
   addItem: (name, body) => {
-    return db.get().collection(name).insertOne(body)
+    // todo: validate body
+    delete body._id
+    return new Promise((resolve,reject) => {
+        db.get().collection(name).insertOne(body)
+          .then(() => {
+            resolve({data: body})
+          }).catch(() => {
+            reject(error())
+          })
+    }) 
   }
 }
