@@ -4,13 +4,11 @@ module.exports = {
   up: (db, next) => {
     db.createCollection('collections')
       .then((coll) => {
-        let ctr = 0
-        let promise1 = coll.createIndex({"name": 1}, {unique:true, background:true, w:1})
-        let promise2 = coll.insertOne(collection('books'))
-        let promise3 = db.createCollection('books')
-
-        Promise.all([promise1,promise2,promise3])
-          .then(() => {
+        Promise.all([
+          coll.createIndex({"name": 1}, {unique:true, background:true, w:1}),
+          coll.insertOne(collection('books')),
+          db.createCollection('books')
+        ]).then(() => {
             next()
           })
           .catch((err) => {
