@@ -12,8 +12,6 @@ env:
   - TRAVIS=travis CXX=g++-4.8
 services:
   - mongodb
-before_script:
-  - npm install
 after_success:
-  - istanbul cover _mocha -- -R spec
+  - istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec
   - cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage
