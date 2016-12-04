@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "seed": "node ./database/seed.js",
+    "seed": "node ./scripts/seed.js",
     "test": "mocha && npm cover"
   },
   "dependencies": {
     "bcrypt": "^0.8.7",
     "body-parser": "~1.15.1",
+    "config": "^1.24.0",
     "debug": "^2.3.3",
     "express": "~4.13.4",
     "mongodb": "^2.2.12"
