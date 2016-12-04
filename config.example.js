@@ -2,8 +2,7 @@ module.exports = {
   "db": {
     "host":"localhost",
     "port": 27017,
-    "db_name": "nodeapp",
-    "users_collection": "users"
+    "db_name": "capi"
     "cred": { // cred is optional
       "username": "root",
       "password": "password"
