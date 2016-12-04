@@ -3,9 +3,5 @@ node_js:
   - 6
 services:
   - mongodb
-before_install:
-  - mkdir installers && curl -sL https://github.com/
-before_script:
-  - node run seed
 after_success:
   - codacy-coverage-reporter
