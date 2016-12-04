@@ -1,9 +1,9 @@
 module.exports = (promise, res) => {
   promise
-    .then(docs => {
-      res.json(docs)
+    .then((data) => {
+      res.json(data)
     })
     .catch((err) => {
-      res.send(err)
+      res.status(err.error.status).json(err)
     })
 }
