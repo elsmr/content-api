@@ -4,8 +4,7 @@ node_js:
 services:
   - mongodb
 before_script:
-  - npm install -g node-gyp
-  - node-gyp rebuild
+  - npm install
 after_success:
   - istanbul cover _mocha -- -R spec
   - cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage
