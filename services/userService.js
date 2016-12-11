@@ -3,6 +3,6 @@ const user = require('../models/user')
 
 module.exports = {
   authenticate: (username, password) => {
-    return
+    return {username, password}
   }
 }

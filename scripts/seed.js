@@ -6,10 +6,10 @@ if(arg !== 'up' && arg !== 'down') {
   process.exit(1)
 }
 else {
-    if(arg === 'up') {
-      seed.up(() => process.exit(0))
-    }
-    else {
-      seed.down(() => process.exit(0))  
-    }
+  if(arg === 'up') {
+    seed.up(() => process.exit(0))
+  }
+  else {
+    seed.down(() => process.exit(0))
+  }
 }

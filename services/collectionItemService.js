@@ -1,6 +1,6 @@
 const db = require('../database/database')
 const error = require('../models/error')
-var ObjectId = require('mongodb').ObjectID;
+var ObjectId = require('mongodb').ObjectID
 
 module.exports = {
   getItem: (name,id) => {
