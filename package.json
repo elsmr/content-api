@@ -8,11 +8,12 @@
     "test": "mocha"
   },
   "dependencies": {
-    "bcrypt": "^0.8.7",
+    "bcrypt": "^1.0.1",
     "body-parser": "~1.15.1",
     "config": "^1.24.0",
     "debug": "^2.3.3",
-    "express": "~4.13.4",
+    "express": "~4.14.0",
+    "helmet": "^3.1.0",
     "jsonwebtoken": "^7.2.1",
     "mongodb": "^2.2.12"
   },
