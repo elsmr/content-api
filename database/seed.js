@@ -28,6 +28,6 @@ const down = (callback) => {
 }
 
 module.exports = {
-  up: up,
-  down: down
+  up,
+  down
 }
