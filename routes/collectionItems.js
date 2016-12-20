@@ -1,4 +1,4 @@
-const router = require('express').Router({mergeParams: true});
+const router = require('express').Router({mergeParams: true})
 const collectionItemService = require('../services/collectionItemService')
 const handlePromise = require('../utils/promise')
 
@@ -16,4 +16,4 @@ router.route('/')
     handlePromise(deleteItem, res)
   })
 
-module.exports = router;
+module.exports = router

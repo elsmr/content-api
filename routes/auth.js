@@ -5,6 +5,7 @@ router.post('/', (req,res) => {
   let name = req.body.username
   let pass = req.body.password
   userService.authenticate(name, pass)
+  res.json({})
 })
 
 module.exports = router

@@ -94,12 +94,12 @@ module.exports = {
     // todo: validate body
     delete body._id
     return new Promise((resolve,reject) => {
-        db.get().collection(name).insertOne(body)
-          .then(() => {
-            resolve({data: body})
-          }).catch(() => {
-            reject(error())
-          })
+      db.get().collection(name).insertOne(body)
+        .then(() => {
+          resolve({data: body})
+        }).catch(() => {
+          reject(error())
+        })
     }) 
   }
 }
