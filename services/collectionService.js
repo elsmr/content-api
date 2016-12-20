@@ -26,7 +26,9 @@ module.exports = {
         .then(() => {
           resolve({data: body})
         }).catch((err) => {
-          if(err.code === 11000) reject(error(`Collection named '${body.name}' already exists`, 409))
+          if(err.code === 11000) {
+            reject(error(`Collection named '${body.name}' already exists`, 409))
+          }
           reject(error())
         })
     })
