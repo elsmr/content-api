@@ -12,8 +12,7 @@ module.exports = {
           }
           resolve({data: docs})
         })
-        .catch((err) => {
-          console.log(err)
+        .catch(() => {
           reject(error())
         })
     })
@@ -43,7 +42,7 @@ module.exports = {
         .then((docs) => {
           if(!docs.value) {
             reject(error(`No item with id '${id}'`, 404))
-          }          
+          }
           resolve({data: docs.value})
         }).catch(() => {
           reject(error())

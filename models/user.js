@@ -3,10 +3,12 @@ module.exports = (username, password, permissions) => {
     username,
     password,
     permissions: permissions || {
-      type: 'user',
-      collections: {write: false},
-      collectionItems: {write: true},
-      media: {write: true}
+      admin: false,
+      collections: {
+        '_default': {read: true, write: true},
+        'books': {write: true}
+      },
+      media: {read: true, write: true}
     }
   }
   return state

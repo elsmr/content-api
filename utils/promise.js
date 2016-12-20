@@ -4,6 +4,6 @@ module.exports = (promise, res) => {
       res.json(data)
     })
     .catch((err) => {
-      res.status(err.error.status).json(err)
+      res.status(err.error.code).json(err)
     })
 }

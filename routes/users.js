@@ -1,11 +1,33 @@
 const router = require('express').Router()
 const userService = require('../services/userService')
+const handlePromise = require('../utils/promise')
+const auth = require('../middleware/auth')
 
-router.post('/', (req,res) => {
-  let name = req.body.username
-  let pass = req.body.password
-  userService.authenticate(name, pass)
-  res.json({})
-})
+router.use(auth.authenticate)
+router.use(auth.authorize({admin: true}))
+
+router.route('/')
+  .get((req, res) => {
+    let getUsers = userService.getUsers()
+    handlePromise(getUsers, res)
+  })
+  .post((req, res) => {
+    let addUser = userService.addUser(req.body)
+    handlePromise(addUser, res)
+  })
+
+router.route('/:username')
+  .get((req, res) => {
+    let getUser = userService.getUser(req.params.username)
+    handlePromise(getUser, res)
+  })
+  .put((req, res) => {
+    let updateUser = userService.updateUser(req.params.username,req.body)
+    handlePromise(updateUser, res)
+  })
+  .delete((req, res) => {
+    let deleteUser = userService.deleteUser(req.params.username)
+    handlePromise(deleteUser, res)
+  })
 
 module.exports = router

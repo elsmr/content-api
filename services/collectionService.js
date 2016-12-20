@@ -11,7 +11,7 @@ module.exports = {
         .catch(() => {
           reject(error())
         })
-    })     
+    })
   },
 
   addCollection: (body) => {
@@ -29,14 +29,14 @@ module.exports = {
           if(err.code === 11000) reject(error(`Collection named '${body.name}' already exists`, 409))
           reject(error())
         })
-    }) 
+    })
   },
 
   updateCollection: (name, body) => {
     // todo: validate body
     delete body._id
     return new Promise((resolve,reject) => {
-      db.get().collection('collections').findOneAndUpdate({name: name}, body)
+      db.get().collection('collections').findOneAndUpdate({name}, body)
         .then((docs) => {
           if(!docs.value) {
             reject(error(`No collection named '${name}'`, 404))
@@ -52,7 +52,7 @@ module.exports = {
 
   deleteCollection: (name) => {
     return new Promise((resolve,reject) => {
-      db.get().collection('collections').findOneAndDelete({name: name})
+      db.get().collection('collections').findOneAndDelete({name})
         .then((docs) => {
           if(!docs.value) {
             reject(error(`No collection named '${name}'`, 404))
@@ -66,12 +66,12 @@ module.exports = {
         }).catch(() => {
           reject(error())
         })
-    })    
+    })
   },
 
   getItems: (name) => {
     return new Promise((resolve, reject) => {
-      db.get().collection('collections').findOne({name: name})
+      db.get().collection('collections').findOne({name})
         .then((docs) => {
           if(!docs) {
             reject(error(`No collection named '${name}'`, 404))
@@ -87,7 +87,7 @@ module.exports = {
         .catch(() => {
           reject(error())
         })
-    })    
+    })
   },
 
   addItem: (name, body) => {
@@ -100,6 +100,6 @@ module.exports = {
         }).catch(() => {
           reject(error())
         })
-    }) 
+    })
   }
 }

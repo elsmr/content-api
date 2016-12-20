@@ -11,12 +11,12 @@ module.exports = {
         ]).then(() => {
           next()
         })
-        .catch((err) => {
-          console.log(err)
+        .catch(() => {
+
         })
       })
-      .catch((err) => {
-        console.log(err)
+      .catch(() => {
+
       })
   },
   down: (db, next) => {
