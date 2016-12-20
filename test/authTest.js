@@ -59,7 +59,7 @@ describe('Authentication & authorization', () => {
     it('it should not return the collections because the JWT is invalid', (done) => {
       chai.request(app)
         .get('/collections')
-        .set('Authorization', `Bearer randomStringNotAJWT894jhKFal`)
+        .set('Authorization', 'Bearer randomStringNotAJWT894jhKFal')
         .end((err, res) => {
           res.should.have.status(400)
           res.body.should.be.a('object')
