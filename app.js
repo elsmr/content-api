@@ -1,11 +1,12 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const helmet = require('helmet')
+const cors = require('cors')
 
 const app = express()
 
 app.use(helmet())
-
+app.use(cors({origin: 'http://localhost:5471'}))
 app.use(bodyParser.json())
 
 const collectionRoutes = require('./routes/collections')
