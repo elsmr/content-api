@@ -6,7 +6,8 @@ module.exports = {
     db.createCollection('users')
       .then((coll) => {
         bcrypt.hash('root', 10, (err, hash) => {
-          coll.insertOne(user('admin', hash, {admin: true, media: {read: true, write: true}, collections:{_default: {write: true, read:true}}}), next)
+          const x = user('admin', hash, {admin: true, media: {read: true, write: true}, collections:{_default: {write: true, read:true}}})
+          coll.insertOne(x, next)
         })
       })
   },

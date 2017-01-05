@@ -15,7 +15,7 @@ module.exports = {
         _db = db
       })
       .catch(() => {
-
+        process.exit(1)
       })
     return connPromise
   },

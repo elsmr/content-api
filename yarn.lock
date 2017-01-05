@@ -841,6 +841,10 @@ istanbul@^0.4.5:
     which "^1.1.1"
     wordwrap "^1.0.0"
 
+jdenticon@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/jdenticon/-/jdenticon-1.4.0.tgz#b4a7337d56d6fc2d110cdd83385ca886a2f108fb"
+
 jodid25519@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/jodid25519/-/jodid25519-1.0.2.tgz#06d4912255093419477d425633606e0e90782967"

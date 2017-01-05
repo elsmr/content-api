@@ -12,7 +12,8 @@ router.route('/')
     handlePromise(getUsers, res)
   })
   .post((req, res) => {
-    let addUser = userService.addUser(req.body)
+    let hostname = `${req.protocol}://${req.get('Host')}`
+    let addUser = userService.addUser(req.body, hostname)
     handlePromise(addUser, res)
   })
 

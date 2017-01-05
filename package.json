@@ -15,6 +15,7 @@
     "debug": "^2.3.3",
     "express": "~4.14.0",
     "helmet": "^3.1.0",
+    "jdenticon": "^1.4.0",
     "jsonwebtoken": "^7.2.1",
     "mongodb": "^2.2.12"
   },
