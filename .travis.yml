@@ -10,9 +10,6 @@ addons:
     - g++-4.8
 env:
   - TRAVIS=travis CXX=g++-4.8
-cache:
-  directories:
-    - node_modules
 services:
   - mongodb
 after_success:
