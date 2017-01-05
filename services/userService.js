@@ -17,7 +17,9 @@ module.exports = {
               if(e) {
                 reject(err)
               } else if(res) {
-                delete docs.password, delete docs._id
+                delete docs.password
+                docs.id = docs._id
+                delete docs._id
                 resolve({data: jwt.sign({data: docs}, config.secret)})
               }
               reject(err)
