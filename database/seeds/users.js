@@ -1,4 +1,4 @@
-const user = require('../../models/user')
+const userModel = require('../../models/user')
 const bcrypt = require('bcrypt')
 
 module.exports = {
@@ -6,8 +6,18 @@ module.exports = {
     db.createCollection('users')
       .then((coll) => {
         bcrypt.hash('root', 10, (err, hash) => {
-          const x = user('admin', hash, {admin: true, media: {read: true, write: true}, collections:{_default: {write: true, read:true}}})
-          coll.insertOne(x, next)
+          const admin = {
+            username: 'admin',
+            password: hash,
+            permissions: {
+              admin: true,
+              media: {read: true, write: true},
+              collections:{
+                _default: {write: true, read:true}
+              }
+            }
+          }
+          coll.insertOne(userModel(admin), next)
         })
       })
   },

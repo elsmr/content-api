@@ -12,6 +12,7 @@ module.exports = {
     return new Promise((resolve, reject) => {
       db.get().collection('users').findOne({username})
         .then((docs) => {
+          console.log(docs)
           let err = error('Authentication failed', 400)
           if(!docs) {
             reject(err)
