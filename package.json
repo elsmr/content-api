@@ -25,6 +25,7 @@
     "codacy-coverage": "^2.0.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.2.0",
-    "mocha-lcov-reporter": "^1.2.0"
+    "mocha-lcov-reporter": "^1.2.0",
+    "node-mongo-seeds": "^2.3.0"
   }
 }

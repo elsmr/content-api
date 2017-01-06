@@ -1,0 +1,5 @@
+{
+	"undefined": "localhost/capi-test",
+	"dev": "localhost/capi-test",
+	"prod": "localhost/capi"
+}

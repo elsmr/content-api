@@ -1,0 +1,101 @@
+[
+  {
+    "username" : "admin@admin.com",
+    "password" : "$2a$10$NZRP.HROwdWL6w5HH77bwuC3FtL/PsWAvPW5nK1/j7dFW0J3F.j3e",
+    "avatar_url": "http://localhost:3000/static/users/avatars/586fef2e7b98c56eb01090fe.svg",
+    "permissions" : {
+      "admin" : true,
+      "media" : {
+        "read" : true,
+        "write" : true
+      },
+      "collections" : {
+        "_default" : {
+          "write" : true,
+          "read" : true
+        }
+      }
+    }
+  },
+  {
+    "username" : "me@eliasmei.re",
+    "password" : "$2a$10$NZRP.HROwdWL6w5HH77bwuC3FtL/PsWAvPW5nK1/j7dFW0J3F.j3e",
+    "avatar_url": "http://localhost:3000/static/users/avatars/586fef727b98c56eb01090ff.svg",
+    "permissions" : {
+      "admin" : false,
+      "media" : {
+        "read" : true,
+        "write" : true
+      },
+      "collections" : {
+        "_default" : {
+          "write" : true,
+          "read" : true
+        }
+      }
+    }
+  },
+  {
+    "username" : "books@test.com",
+    "password" : "$2a$10$NZRP.HROwdWL6w5HH77bwuC3FtL/PsWAvPW5nK1/j7dFW0J3F.j3e",
+    "avatar_url": "http://localhost:3000/static/users/avatars/586fef837b98c56eb0109100.svg",
+    "permissions" : {
+      "admin" : false,
+      "media" : {
+        "read" : true,
+        "write" : false
+      },
+      "collections" : {
+        "_default" : {
+          "write" : false,
+          "read" : true
+        },
+        "books" : {
+          "write" : true
+        },
+      }
+    }
+  },
+  {
+    "username" : "pokemon@test.com",
+    "password" : "$2a$10$NZRP.HROwdWL6w5HH77bwuC3FtL/PsWAvPW5nK1/j7dFW0J3F.j3e",
+    "avatar_url": "http://localhost:3000/static/users/avatars/586fefa17b98c56eb0109101.svg",
+    "permissions" : {
+      "admin" : false,
+      "media" : {
+        "read" : true,
+        "write" : false
+      },
+      "collections" : {
+        "_default" : {
+          "write" : false,
+          "read" : true
+        },
+        "pokemon" : {
+          "write" : true
+        },
+      }
+    }
+  },
+  {
+    "username" : "pokemon@test.com",
+    "password" : "$2a$10$NZRP.HROwdWL6w5HH77bwuC3FtL/PsWAvPW5nK1/j7dFW0J3F.j3e",
+    "avatar_url": "http://localhost:3000/static/users/avatars/586fefb27b98c56eb0109102.svg",
+    "permissions" : {
+      "admin" : false,
+      "media" : {
+        "read" : true,
+        "write" : false
+      },
+      "collections" : {
+        "_default" : {
+          "write" : false,
+          "read" : true
+        },
+        "pokemon" : {
+          "write" : true
+        },
+      }
+    }
+  },
+]

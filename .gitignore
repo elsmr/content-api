@@ -2,4 +2,14 @@
 node_modules
 config.js
 coverage
-static
+
+static/*
+!static/users/
+static/users/*
+!static/users/avatars
+static/users/avatars/*
+!static/users/avatars/586fef2e7b98c56eb01090fe.svg
+!static/users/avatars/586fef727b98c56eb01090ff.svg
+!static/users/avatars/586fef837b98c56eb0109100.svg
+!static/users/avatars/586fefa17b98c56eb0109101.svg
+!static/users/avatars/586fefb27b98c56eb0109102.svg

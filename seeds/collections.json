@@ -1,0 +1,39 @@
+[
+  {
+    "name": "pokemons",
+    "displayName": "Pokemons",
+    "lang": ["en"],
+    "fields": [
+      {"name": "number", "type": "number"},
+      {"name": "name", "type": "shortText"},
+      {"name": "classification", "type": "shortText"},
+      {"name": "weight", "type": "shortText"},
+      {"name": "height", "type": "shortText"}
+    ]
+  },
+  {
+    "name": "got_characters",
+    "displayName": "Game of Thrones Characters",
+    "lang": ["en"],
+    "fields": [
+      {"name": "name", "type": "shortText"},
+      {"name": "description", "type": "longText"}
+    ]
+  },
+  {
+    "name": "books",
+    "displayName": "Books",
+    "lang": ["en"],
+    "fields": [
+      {"name": "name", "type": "shortText"},
+      {"name": "author", "type": "shortText"},
+      {"name": "cat", "type": "array(shortText)"},
+      {"name": "sequence_i", "type": "number"},
+      {"name": "genre_s", "type": "shortText"},
+      {"name": "price", "type": "float"},
+      {"name": "inStock", "type": "bool"},
+      {"name": "pages_i", "type": "number"}
+
+    ]
+  }
+]
