@@ -2,7 +2,7 @@ const chai = require('chai')
 const chaiHttp = require('chai-http')
 const app = require('../app')
 require('./collectionTest')
-let authJWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYWRtaW4iLCJwZXJtaXNzaW9ucyI6eyJhZG1pbiI6dHJ1ZSwibWVkaWEiOnsicmVhZCI6dHJ1ZSwid3JpdGUiOnRydWV9LCJjb2xsZWN0aW9ucyI6eyJfZGVmYXVsdCI6eyJ3cml0ZSI6dHJ1ZSwicmVhZCI6dHJ1ZX19fX0sImlhdCI6MTQ4MjI0MzM5OH0.sT2k4xZ61u50hacnTby_hCps2cMDUIEiWdDdqWdzjKE'
+let authJWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoiYWRtaW5AYWRtaW4uY29tIiwiYXZhdGFyX3VybCI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC9zdGF0aWMvdXNlcnMvYXZhdGFycy81ODZmZWYyZTdiOThjNTZlYjAxMDkwZmUuc3ZnIiwicGVybWlzc2lvbnMiOnsiYWRtaW4iOnRydWUsIm1lZGlhIjp7InJlYWQiOnRydWUsIndyaXRlIjp0cnVlfSwiY29sbGVjdGlvbnMiOnsiX2RlZmF1bHQiOnsid3JpdGUiOnRydWUsInJlYWQiOnRydWV9fX0sImlkIjoiNTg2ZmYyNGRjNDY5MDc3Njc0ZTdmNTY5In0sImlhdCI6MTQ4MzczNDI1OH0.AQVjq-QtWwe3tBVC8tsLNkPRK9tuv1EBKtUFRJ_RvsY'
 
 chai.should()
 chai.use(chaiHttp)
@@ -34,7 +34,7 @@ describe('Authentication & authorization', () => {
     it('it should succesfully authenticate and return a JWT', (done) => {
       chai.request(app)
         .post('/auth')
-        .send({username: 'admin', password: 'root'})
+        .send({username: 'admin@admin.com', password: 'root'})
         .end((err, res) => {
           res.should.have.status(200)
           res.body.should.be.a('object')

@@ -52,7 +52,7 @@
         },
         "books" : {
           "write" : true
-        },
+        }
       }
     }
   },
@@ -73,7 +73,7 @@
         },
         "pokemon" : {
           "write" : true
-        },
+        }
       }
     }
   },
@@ -94,8 +94,8 @@
         },
         "pokemon" : {
           "write" : true
-        },
+        }
       }
     }
-  },
+  }
 ]

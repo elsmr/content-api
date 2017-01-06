@@ -19,8 +19,8 @@ module.exports = {
     delete body._id
     return new Promise((resolve,reject) => {
       db.get().createCollection(body.name)
-        .catch((err) => {
-          reject(err)
+        .catch(() => {
+          reject(error())
         })
       db.get().collection('collections').insertOne(body)
         .then(() => {

@@ -1,5 +1,5 @@
 {
-	"undefined": "localhost/capi-test",
-	"dev": "localhost/capi-test",
+	"undefined": "localhost/capi-dev",
+	"dev": "localhost/capi-dev",
 	"prod": "localhost/capi"
 }

@@ -4,14 +4,14 @@
     "name": "bulbasaur",
     "classification": "seed pokèmon",
     "weight": "6.9 kg",
-    "height": "0.7 m",
+    "height": "0.7 m"
   },
   {
     "number": "002",
     "name": "ivysaur",
     "classification": "seed pokèmon",
     "weight": "13.0 kg",
-    "height": "1.0 m",
+    "height": "1.0 m"
   },
   {
     "number": "003",
@@ -32,7 +32,6 @@
     "number": "005",
     "name": "charmeleon",
     "classification": "flame pokèmon",
-
     "weight": "19.0 kg",
     "height": "1.1 m"
   },
