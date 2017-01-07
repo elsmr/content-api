@@ -17,9 +17,7 @@ module.exports = {
             reject(err)
           } else {
             bcrypt.compare(password, docs.password, (e, res) => {
-              if(e) {
-                reject(err)
-              } else if(res) {
+              if(res) {
                 delete docs.password
                 docs.id = docs._id
                 delete docs._id

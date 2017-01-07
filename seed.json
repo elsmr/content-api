@@ -1,5 +1,8 @@
 {
 	"undefined": "localhost/capi-dev",
 	"dev": "localhost/capi-dev",
+  "test": "localhost/capi-dev",
+  "development": "localhost/capi-dev",
+  "CI": "localhost/capi-dev",
 	"prod": "localhost/capi"
 }
