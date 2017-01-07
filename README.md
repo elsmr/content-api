@@ -6,7 +6,7 @@
 
 ## Run locally
 
-### Install dependencies
+### 1. Install dependencies
 
 #### Yarn
 
@@ -14,12 +14,13 @@
 
 #### npm
 
-`npm install`
+`npm install
+
+### 2. Seed database with sample data (optional)
+
+`npm run seed``
 
 ### Run server
 
 `npm start`
 
-### Seed database with sample data (optional)
-
-`npm run seed`
