@@ -14,6 +14,18 @@ module.exports = {
     })
   },
 
+  getCollection: (name) => {
+    return new Promise((resolve, reject) => {
+      db.get().collection('collections').findOne({name})
+        .then((docs) => {
+          resolve({data: docs})
+        })
+        .catch(() => {
+          reject(error())
+        })
+    })
+  },
+
   addCollection: (body) => {
     // todo: validate body
     delete body._id
