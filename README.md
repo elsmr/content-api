@@ -20,7 +20,7 @@
 
 `npm run seed``
 
-### Run server
+### 3. Run server
 
 `npm start`
 
