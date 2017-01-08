@@ -1,13 +1,13 @@
 language: node_js
 dist: trusty
-sudo: false
+sudo: required
 node_js: 6
 services:
   - mongodb
 addons:
   apt:
     sources:
-    - mongodb-3.4-trusty
+    - mongodb-3.0-trusty
     packages:
     - mongodb-org-server
 cache:
