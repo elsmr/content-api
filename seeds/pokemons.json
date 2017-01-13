@@ -2,21 +2,21 @@
   {
     "number": "001",
     "name": "bulbasaur",
-    "classification": "seed pokèmon",
+    "classification": "seed pokémon",
     "weight": "6.9 kg",
     "height": "0.7 m"
   },
   {
     "number": "002",
     "name": "ivysaur",
-    "classification": "seed pokèmon",
+    "classification": "seed pokémon",
     "weight": "13.0 kg",
     "height": "1.0 m"
   },
   {
     "number": "003",
     "name": "venusaur",
-    "classification": "seed pokèmon",
+    "classification": "seed pokémon",
     "weight": "100.0 kg",
     "height": "2.0 m"
   },
@@ -24,63 +24,63 @@
     "number": "004",
     "name": "charmander",
     "altname": "charmender",
-    "classification": "lizard pokèmon",
+    "classification": "lizard pokémon",
     "weight": "8.5 kg",
     "height": "0.6 m"
   },
   {
     "number": "005",
     "name": "charmeleon",
-    "classification": "flame pokèmon",
+    "classification": "flame pokémon",
     "weight": "19.0 kg",
     "height": "1.1 m"
   },
   {
     "number": "006",
     "name": "charizard",
-    "classification": "flame pokèmon",
+    "classification": "flame pokémon",
     "weight": "90.5 kg",
     "height": "1.7 m"
   },
   {
     "number": "007",
     "name": "squirtle",
-    "classification": "tiny turtle pokèmon",
+    "classification": "tiny turtle pokémon",
     "weight": "9.0 kg",
     "height": "0.5 m"
   },
   {
     "number": "008",
     "name": "wartortle",
-    "classification": "turtle pokèmon",
+    "classification": "turtle pokémon",
     "weight": "22.5 kg",
     "height": "1.0 m"
   },
   {
     "number": "009",
     "name": "blastoise",
-    "classification": "shellfish pokèmon",
+    "classification": "shellfish pokémon",
     "weight": "85.5 kg",
     "height": "1.6 m"
   },
   {
     "number": "010",
     "name": "caterpie",
-    "classification": "worm pokèmon",
+    "classification": "worm pokémon",
     "weight": "2.9 kg",
     "height": "0.3 m"
   },
   {
     "number": "011",
     "name": "metapod",
-    "classification": "cocoon pokèmon",
+    "classification": "cocoon pokémon",
     "weight": "9.9 kg",
     "height": "0.7 m"
   },
   {
     "number": "012",
     "name": "butterfree",
-    "classification": "butterfly pokèmon",
+    "classification": "butterfly pokémon",
     "weight": "32.0 kg",
     "height": "1.1 m"
   }
