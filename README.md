@@ -14,11 +14,10 @@
 
 #### npm
 
-`npm install
-
+`npm install`
 ### 2. Seed database with sample data (optional)
 
-`npm run seed``
+`npm run seed`
 
 ### 3. Run server
 
